@@ -7,21 +7,21 @@ from urllib.parse import quote_plus
 
 
 
-host = 'localhost'
-port = 5432
-dbname = 'mani_test'
-user = 'postgres'
-password = 'Manibabu@2710'
-sslmode = "prefer"
-# clientSecret = ""
-# clientID = ""
-# tenantID = ""
-user_enc = quote_plus(user)
-password_enc =quote_plus(password)
+# host = 'localhost'
+# port = 5432
+# dbname = 'mani_test'
+# user = 'postgres'
+# password = 'Manibabu@2710'
+# sslmode = "prefer"
+# # clientSecret = ""
+# # clientID = ""
+# # tenantID = ""
+# user_enc = quote_plus(user)
+# password_enc =quote_plus(password)
 
-conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
-dblink = f"postgresql://{user_enc}:{password_enc}@{host}/{dbname}"
-
+# conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
+# dblink = f"postgresql://{user_enc}:{password_enc}@{host}/{dbname}"
+dblink = "postgres:qkqPoMWCMRWGAhtvKQcnSmOMWWTCqfeB@postgres.railway.internal:5432/railway"
 engine = create_engine(dblink)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine, future=True)
 
