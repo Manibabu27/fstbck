@@ -1,4 +1,7 @@
+from dotenv import load_dotenv
 from fastapi import FastAPI
+
+load_dotenv()  # Load environment variables from .env file
 from router import router  # Import the router from your router.py file
 from db import Base, engine
 
