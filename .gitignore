@@ -1,0 +1,17 @@
+# Virtual Environment
+# Replace 'HRM/' with the name of your virtual environment directory if it's different
+HRM/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+
+# Operating System files
+.DS_Store
+Thumbs.db
