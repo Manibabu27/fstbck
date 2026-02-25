@@ -19,9 +19,9 @@ Before running this project locally, ensure you have:
 - pip (Python package manager)
   
 ## Installations
-Clone project in your pc from git.
-Create a virtual Environment and activate it.
-pip install -r requirements.txt
-chage origins link for local host in main.py CORS.
-Create a .env file and create db link and enter your db credentials as required in environment file.
+- Clone project in your pc from git.
+- Create a virtual Environment and activate it.
+- pip install -r requirements.txt
+- Chage origins link for local host in main.py CORS.
+- Create a .env file and create db link and enter your db credentials as required in environment file.
 
