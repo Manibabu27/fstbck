@@ -25,8 +25,8 @@ async def root():
 
 
 origins = [ 
-    "http://localhost:5173", 
-# # React dev server "https://your-deployed-frontend.com"
+    # "http://localhost:5173", 
+    "https://delicate-moonbeam-ae6113.netlify.app/"
  ] 
 app.add_middleware( 
     CORSMiddleware, 
