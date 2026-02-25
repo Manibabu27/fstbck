@@ -9,11 +9,11 @@ from schemas import employe_details, attendance
 router = APIRouter()
 
 @router.post("/employees_details/")
-async def create_employee(employee: list[dict], db: Session = Depends(get_db)):
+async def create_employee(employee: dict, db: Session = Depends(get_db)):
     try:
-        for emp in employee:
-            new_employee = employe_details(**emp)
-            db.add(new_employee)
+       
+        new_employee = employe_details(**employee)
+        db.add(new_employee)
         db.commit()
         db.refresh(new_employee)
         return new_employee
@@ -21,9 +21,9 @@ async def create_employee(employee: list[dict], db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/employees_details/")
-async def get_employees(employe_id: int,db: Session = Depends(get_db)):
+async def get_employees(db: Session = Depends(get_db)):
     try:
-        employees = db.query(employe_details).filter(employe_details.employee_id == employe_id).all()
+        employees = db.query(employe_details).all()
         return employees
     except Exception as e:
         raise   HTTPException(status_code=500, detail=str(e))
